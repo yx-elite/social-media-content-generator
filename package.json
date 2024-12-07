@@ -13,6 +13,8 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.8.0",
+    "@clerk/themes": "^2.1.53",
     "@neondatabase/serverless": "^0.10.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -33,6 +35,8 @@
     "eslint": "^8",
     "eslint-config-next": "15.0.4",
     "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.19.2",
     "typescript": "^5"
