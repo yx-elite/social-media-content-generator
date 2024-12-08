@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     return new Response("Error: Verification failed", { status: 400 });
   }
 
-  // TODO: Save user to database
+  // Save user to database & send welcome email
   if (evt.type === "user.created" || evt.type === "user.updated") {
     const { id, email_addresses, first_name, last_name } = evt.data;
     const email = email_addresses[0]?.email_address;
@@ -64,7 +64,6 @@ export async function POST(req: Request) {
       }
     }
   }
-  // TODO: Send welcome email
 
   // // Sample: Log payload to console
   // const { id } = evt.data; 
