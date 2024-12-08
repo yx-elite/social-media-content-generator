@@ -9,17 +9,21 @@ SocialSpark is a modern web application that helps users generate engaging socia
 - Responsive design with Tailwind CSS
 - Dark mode support
 - Database integration with Drizzle ORM
-- Subscription management
+- Email notifications with Mailtrap
+- Webhook integration for user events
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Authentication:** Clerk
-- **Database:** PostgreSQL (with Drizzle ORM)
+- **Database:** PostgreSQL (Neon DB)
+- **ORM:** Drizzle ORM
 - **Styling:** Tailwind CSS
 - **UI Components:** shadcn/ui
 - **Icons:** Lucide Icons
+- **Email Service:** Mailtrap
+- **Webhook Handling:** Svix
 
 ## 📦 Installation
 
@@ -76,6 +80,28 @@ The following environment variables are required:
 - `DATABASE_URL`: PostgreSQL database connection URL
 - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: Clerk public key
 - `CLERK_SECRET_KEY`: Clerk secret key
+- `WEBHOOK_SECRET`: Clerk webhook signing secret
+- `NEXT_PUBLIC_CLERK_SIGN_IN_URL`: Sign in route
+- `NEXT_PUBLIC_CLERK_SIGN_UP_URL`: Sign up route
+- `MAILTRAP_TOKEN`: Mailtrap API token
+- `SENDER_EMAIL`: Email address for sending notifications
+
+## 📁 Project Structure
+
+├── app/
+│ ├── (auth)/
+│ │ ├── sign-in/
+│ │ └── sign-up/
+│ ├── api/
+│ │ └── webhooks/
+│ ├── fonts/
+│ └── layout.tsx
+├── utils/
+│ └── db/
+│ ├── action.ts
+│ ├── index.ts
+│ └── schema.ts
+└── middleware.ts
 
 ## 🤝 Contributing
 
