@@ -27,3 +27,18 @@
 [X] Create Responsive Navbar component
 [X] Add Clerk components to Navbar
 
+
+=== PART 4: CLERK & DATABASE SYNC ===
+
+[X] Setup Ngrok `ngrok http 3000`
+[X] Setup Clerk webhook endpoint
+[X] Add webhook/signing secret to `.env.local`
+[X] Set webhook route as public in `middleware.ts`
+[X] Install Svix
+[X] Create the webhook endpoint
+[X] Get type inference for webhook events
+[X] Test the webhook
+[X] Create `index.ts` to export db instance
+[X] Create action to save user to database
+[X] Implement the action in webhook endpoint
+[X] Test the webhook with database
