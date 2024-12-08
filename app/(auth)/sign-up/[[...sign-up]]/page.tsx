@@ -1,8 +1,10 @@
+import AnimatedGalaxy from "@/components/AnimatedGalaxy";
 import { SignUp } from "@clerk/nextjs";
 
 const SignUpPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-black">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-black to-gray-900">
+      <AnimatedGalaxy />
       <SignUp
         appearance={{
           elements: {

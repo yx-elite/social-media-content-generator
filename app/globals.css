@@ -27,7 +27,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,7 +53,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -63,4 +63,55 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* -------------------------------- */
+/* --------- Glow Effects --------- */
+/* -------------------------------- */
+.glow-yellow {
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.6))
+    drop-shadow(0 0 20px rgba(250, 204, 21, 0.4));
+}
+
+.glow-blue {
+  filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.6))
+    drop-shadow(0 0 20px rgba(96, 165, 250, 0.4));
+}
+
+.glow-green {
+  filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.6))
+    drop-shadow(0 0 20px rgba(74, 222, 128, 0.4));
+}
+
+/* ------------------------------------ */
+/* --- StarBackground Global Styles --- */
+/* ------------------------------------ */
+.star {
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: transform 0.3s ease-out;
+  animation: twinkle 4s infinite;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Add random animation delays to create a more natural effect */
+.star:nth-child(3n) {
+  animation-delay: 1s;
+}
+.star:nth-child(3n + 1) {
+  animation-delay: 2s;
+}
+.star:nth-child(3n + 2) {
+  animation-delay: 3s;
 }
