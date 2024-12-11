@@ -10,7 +10,7 @@
 [X] Install Drizzle ORM & Drizzle Kit
 [X] Create `drizzle.config.ts`
 [X] Create Drizzle schema
-[X] Add `DATABASE_URL` to `.env.local`
+[X] Add `DATABASE_URL` to `.env`
 [X] Add database command to package.json
 [X] Push schema to database
 
@@ -42,3 +42,15 @@
 [X] Create action to save user to database
 [X] Implement the action in webhook endpoint
 [X] Test the webhook with database
+
+
+=== PART 5: Email Setup ===
+
+[X] Create `mailtest.mjs` for testing
+[X] Use default domain for demo
+[X] Install Mailtrap
+[X] Add `MAILTRAP_TOKEN` to `.env.local`
+[X] Create functions in `utils/mailtrap.ts`
+[X] Integrate in action after user creation
+[X] Test user creation with PERSONAL email
+[X] Create landing page
