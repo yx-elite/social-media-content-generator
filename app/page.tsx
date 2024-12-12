@@ -44,7 +44,7 @@ const benefits = [
   "Scale your social media presence effortlessly",
 ];
 
-export default function Home() {
+export default function HomePage() {
   const { userId } = useAuth();
 
   return (
