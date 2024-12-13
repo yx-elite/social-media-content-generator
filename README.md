@@ -106,24 +106,9 @@ npm run dev
 │ └── schema.ts
 └── middleware.ts
 
-## 💰 Pricing Plans
+## 💰 Bug to Fix
 
-- **Basic Plan ($9/month)**
-  - 100 AI-generated posts per month
-  - Twitter thread generation
-  - Basic analytics
-
-- **Pro Plan ($29/month)**
-  - 500 AI-generated posts
-  - Twitter, Instagram, LinkedIn content
-  - Advanced analytics
-  - Priority support
-
-- **Enterprise Plan (Custom pricing)**
-  - Unlimited AI-generated posts
-  - All social media platforms
-  - Custom AI model training
-  - Dedicated account manager
+- [ ] The "Current Plan" button is rendered few seconds after the webpage is loaded.
 
 ## 🤝 Contributing
 
