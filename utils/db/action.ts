@@ -1,6 +1,6 @@
 import { db } from "@/utils/db";
-import { Users, Subscriptions } from "@/utils/db/schema";
-import { eq, sql } from "drizzle-orm";
+import { Users, Subscriptions, GeneratedContent } from "@/utils/db/schema";
+import { eq, sql, desc } from "drizzle-orm";
 import { sendWelcomeEmail } from "@/utils/mailtrap";
 
 export async function createOrUpdateUser(
@@ -106,6 +106,20 @@ export async function createOrUpdateUserSubscription(
   }
 }
 
+export async function getUserPoints(userId: string) {
+  try {
+    const [user] = await db
+      .select({ points: Users.points, id: Users.id, email: Users.email })
+      .from(Users)
+      .where(eq(Users.stripeCustomerId, userId))
+      .execute();
+    return user?.points ?? 0;
+  } catch (err) {
+    console.error("Error: Failed to get user points:", err);
+    return 0;
+  }
+}
+
 export async function updateUserPoints(userId: string, points: number) {
   try {
     const [updatedUser] = await db
@@ -143,5 +157,62 @@ export async function getUserSubscription(userId: string) {
   } catch (error) {
     console.error("Error: Failed to get user subscription:", error);
     return null;
+  }
+}
+
+export async function saveGeneratedContent(
+  userId: string,
+  content: string[],
+  prompt: string,
+  contentType: string,
+  imageData: string | null,
+) {
+  try {
+    const [savedContent] = await db
+      .insert(GeneratedContent)
+      .values({
+        userId: sql`(SELECT id FROM ${Users} WHERE stripe_customer_id = ${userId})`,
+        content: content.join("\n\n"),
+        prompt,
+        contentType,
+        imageData,
+      })
+      .returning()
+      .execute();
+    return savedContent;
+  } catch (err) {
+    console.error("Error: Failed to save generated content:", err);
+    return null;
+  }
+}
+
+export async function getUserGenerationHistory(
+  userId: string,
+  limit: number = 10,
+) {
+  try {
+    const history = await db
+      .select({
+        id: GeneratedContent.id,
+        content: GeneratedContent.content,
+        prompt: GeneratedContent.prompt,
+        contentType: GeneratedContent.contentType,
+        imageData: GeneratedContent.imageData,
+        createdAt: GeneratedContent.createdAt,
+      })
+      .from(GeneratedContent)
+      .where(
+        eq(
+          GeneratedContent.userId,
+          sql`(SELECT id FROM ${Users} WHERE stripe_customer_id = ${userId})`,
+        ),
+      )
+      .orderBy(desc(GeneratedContent.createdAt))
+      .limit(limit)
+      .execute();
+    return history;
+  } catch (err) {
+    console.error("Error: Failed to get user generation history:", err);
+    return [];
   }
 }
