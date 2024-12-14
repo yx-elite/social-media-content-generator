@@ -1,0 +1,51 @@
+.markdown-content {
+  @apply text-gray-100;
+}
+
+.markdown-content p {
+  @apply mb-4 text-sm leading-relaxed;
+}
+
+.markdown-content h1 {
+  @apply mb-4 text-2xl font-bold;
+}
+
+.markdown-content h2 {
+  @apply mb-3 text-xl font-bold;
+}
+
+.markdown-content h3 {
+  @apply mb-2 text-lg font-bold;
+}
+
+.markdown-content ul {
+  @apply mb-4 list-inside list-disc text-sm;
+}
+
+.markdown-content ol {
+  @apply mb-4 list-inside list-decimal text-sm;
+}
+
+.markdown-content li {
+  @apply mb-1;
+}
+
+.markdown-content a {
+  @apply text-blue-400 underline hover:text-blue-300;
+}
+
+.markdown-content blockquote {
+  @apply my-4 border-l-4 border-gray-600 pl-4 italic;
+}
+
+.markdown-content code {
+  @apply rounded bg-gray-800 px-1 py-0.5 font-mono text-sm;
+}
+
+.markdown-content pre {
+  @apply my-4 overflow-x-auto rounded bg-gray-800 p-4;
+}
+
+.markdown-content hr {
+  @apply my-6 border-gray-300;
+}
