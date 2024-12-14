@@ -2,19 +2,21 @@
 
 SocialSpark is a modern web application that helps users generate engaging social media content using AI. Built with Next.js 15, TypeScript, and integrated with various powerful tools and services.
 
-## 🚀 Features
+## Features
 
-- AI-powered content generation
-- User authentication with Clerk
-- Subscription plans with Stripe integration
-- Responsive design with Tailwind CSS
-- Dark mode support
-- Database integration with Drizzle ORM
-- Email notifications with Mailtrap
-- Webhook integration for user events
-- Points-based credit system
+- 🤖 AI-powered content generation for Twitter, Instagram, and LinkedIn
+- 🔐 Secure authentication with Clerk
+- 💳 Subscription management with Stripe
+- 📧 Email notifications with Mailtrap
+- 🎨 Modern UI with Tailwind CSS and shadcn/ui
+- 📱 Fully responsive design
+- 🔄 Real-time content history
+- 📊 Points-based usage system
+- 🖼️ Image upload support for Instagram posts
+- 📋 One-click content copying
+- ✨ Markdown support for generated content
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
@@ -28,7 +30,7 @@ SocialSpark is a modern web application that helps users generate engaging socia
 - **Email Service:** Mailtrap
 - **Webhook Handling:** Svix
 
-## 📦 Installation
+## Getting Started
 
 1. Clone the repository:
 
@@ -65,6 +67,10 @@ NEXT_PUBLIC_BASE_URL=your_base_url
 # Email
 MAILTRAP_TOKEN=your_mailtrap_token
 SENDER_EMAIL=your_sender_email
+
+# VISIONARY API
+VISIONARY_API_URL=https://open.xiaojingai.com
+VISIONARY_API_KEY=your_visionary_api_key
 ```
 
 4. Initialize the database:
@@ -79,7 +85,7 @@ npm run db:push
 npm run dev
 ```
 
-## 📝 Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -89,31 +95,17 @@ npm run dev
 - `npm run db:push` - Push schema changes to database
 - `npm run db:studio` - Open Drizzle Studio
 
-## 📁 Project Structure
-
-├── app/
-│ ├── (auth)/
-│ │ ├── sign-in/
-│ │ └── sign-up/
-│ ├── api/
-│ │ └── webhooks/
-│ ├── fonts/
-│ └── layout.tsx
-├── utils/
-│ └── db/
-│ ├── action.ts
-│ ├── index.ts
-│ └── schema.ts
-└── middleware.ts
-
-## 💰 Bug to Fix
-
-- [ ] The "Current Plan" button is rendered few seconds after the webpage is loaded.
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) for the UI components
+- [Clerk](https://clerk.dev/) for authentication
+- [Stripe](https://stripe.com/) for payment processing
+- [Mailtrap](https://mailtrap.io/) for email testing
