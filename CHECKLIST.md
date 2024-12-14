@@ -4,6 +4,7 @@
 - [x] Remove unused boilerplate files
 - [x] Install shadcn/ui
 
+
 === PART 2: Database Setup ===
 
 - [x] Install Drizzle ORM & Drizzle Kit
@@ -12,6 +13,7 @@
 - [x] Add `DATABASE_URL` to `.env`
 - [x] Add database command to package.json
 - [x] Push schema to database
+
 
 === PART 3: Authentication Setup ===
 
@@ -24,6 +26,7 @@
 - [x] Edit dark theme & font in `app/layout.tsx`
 - [x] Create Responsive Navbar component
 - [x] Add Clerk components to Navbar
+
 
 === PART 4: CLERK & DATABASE SYNC ===
 
@@ -40,6 +43,7 @@
 - [x] Implement the action in webhook endpoint
 - [x] Test the webhook with database
 
+
 === PART 5: Email Setup ===
 
 - [x] Create `mailtest.mjs` for testing
@@ -50,6 +54,7 @@
 - [x] Integrate in action after user creation
 - [x] Test user creation with PERSONAL email
 - [x] Create landing page
+
 
 === PART 6: Pricing & Subscriptions ===
 
@@ -69,3 +74,31 @@
 - [x] Create subscriptions API route
 - [x] Create action to fetch user subscription status
 - [x] Display subscription status on pricing page
+
+
+=== PART 7: Dashboard Page ===
+
+- [x] Create dashboard page
+- [x] Handle image upload section
+- [x] Convert image to base64
+- [x] Display uploaded image
+- [x] Create generate content button
+- [x] Create API route for generate content
+- [x] Create generate content action
+- [x] Spilt the content into an array of tweets
+- [x] Create action to get user points
+- [x] Create API route to fetch & update user points
+- [x] Create action to save generated content
+- [x] Create API route to save generated content
+- [x] Realtime update history section
+- [x] Create action to fetch history
+- [x] Create API route to fetch history
+- [x] Add loading state to dashboard
+- [x] Add scrollbar to history section
+- [x] Change style of scrollbar
+- [x] Display generated content & history content
+- [x] Parse content to array (DB: string, UI: array)
+- [x] Install React Markdown, remarkGfm, rehypeRaw, Pluggable
+- [x] Add markdown to content
+- [x] Add copy to clipboard functionality
+- [x] Custom markdown styles in `markdown.css`
